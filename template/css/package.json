@@ -1,0 +1,66 @@
+{
+  "name": "@_nu/css-<%= componentName %>",
+  "version": "0.0.2",
+  "description": "CSS <%= componentName %>",
+  "repository": "git@github.com:nu-system/css-<%= componentName %>.git",
+  "homepage": "https://github.com/nu-system/css-<%= componentName %>",
+  "author": "<%= author %>",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "main": "lib/index.css",
+  "files": [
+    "lib",
+    "less",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "keywords": [
+    "!ui",
+    "nu-system",
+    "css-<%= componentName %>",
+    "<%= componentName %>",
+    "css"
+  ],
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "commit": "git add . && git cz",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run log && git add . && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,less,css}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "cli": "^1.0.1",
+    "commitizen": "^4.0.3",
+    "conventional-changelog-cli": "^2.0.23",
+    "cz-conventional-changelog": "3.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-less": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^1.19.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
