@@ -20,7 +20,7 @@
     "cli"
   ],
   "scripts": {
-    "commit": "git add . && git cz",
+    "cz": "git add . && git cz",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'"
@@ -31,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,md,less,css}": [
+    "*.{js,md,less,css}": [
       "prettier --write"
     ]
   },

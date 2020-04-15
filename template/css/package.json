@@ -11,14 +11,7 @@
     "last 2 versions"
   ],
   "main": "lib/index.css",
-  "files": [
-    "lib",
-    "less",
-    "CHANGELOG.md",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ],
+  "files": <%- pkgFiles %>,
   "keywords": [
     "!ui",
     "nu-system",

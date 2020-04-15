@@ -9,8 +9,13 @@ const FILE_COPY_IGNORE = ['node_modules', 'yarn.lock', 'package.json', 'lang'];
 // 需要使用 ejs 模版的文件
 const FILE_TPL = ['README.md', 'lang', 'package.json'];
 
-module.exports = function ({ data, dirRoot, dirProject }) {
+module.exports = function({ data, dirRoot, dirProject }) {
   const { componentType } = data;
+
+  // 把 package.json 里面的file 独立出来
+  // 不然 @_nu/cli npm pack 会忽略掉 css 里面的其它文件
+  data.pkgFiles = JSON.stringify(['demo', 'lang', 'src', 'lib']);
+
   return new Promise((resole, reject) => {
     const dirTpl = path.join(dirRoot, `template/${componentType}`);
 
@@ -35,10 +40,10 @@ module.exports = function ({ data, dirRoot, dirProject }) {
         // 把不需要模版编译的文件直接拷贝过去
         files
           .filter(item => !FILE_COPY_IGNORE.includes(item))
-          .forEach((item) => {
+          .forEach(item => {
             const objCopy = {
               from: path.join(dirTpl, item),
-              to: path.join(dirProject, item)
+              to: path.join(dirProject, item),
             };
             memFsE.copy(objCopy.from, objCopy.to);
           });
@@ -46,10 +51,10 @@ module.exports = function ({ data, dirRoot, dirProject }) {
         // 把需要编译的文件写入
         files
           .filter(item => FILE_TPL.includes(item))
-          .forEach((item) => {
+          .forEach(item => {
             const objCopy = {
               from: path.join(dirTpl, item),
-              to: path.join(dirProject, item)
+              to: path.join(dirProject, item),
             };
             memFsE.copyTpl(objCopy.from, objCopy.to, data);
           });
