@@ -1,4 +1,8 @@
-## 1.0.3 (2020-04-15)
+## 1.0.4 (2020-04-15)
+
+### Bug Fixes
+
+- fix file ([9859946](https://github.com/nu-system/nu-cli/commit/98599468da6fca0b95b9ca3ca6d780d7febbfdcd))
 
 ### Features
 
