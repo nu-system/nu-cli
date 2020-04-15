@@ -9,15 +9,6 @@
   "bin": {
     "nu-cli": "bin/index.js"
   },
-  "files": [
-    "bin",
-    "src",
-    "template",
-    "CHANGELOG.md",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ],
   "keywords": [
     "!ui",
     "nu-system",
