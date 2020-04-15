@@ -1,4 +1,4 @@
-## 1.0.4 (2020-04-15)
+## [1.0.4](https://github.com/nu-system/nu-cli/compare/93e54a5d736cc87fef229188c1cd303c67ca56e4...v1.0.4) (2020-04-15)
 
 ### Bug Fixes
 

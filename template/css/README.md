@@ -1,4 +1,4 @@
-# @\_nu/css-input
+# @\_nu/css-<%= componentName %>
 
 [![npm package][npm-badge]][npm-url]
 [![npm downloads][npm-downloads]][npm-url]
@@ -18,7 +18,7 @@ English | [简体中文](https://nu-system.github.io/zh/css/<%= componentName %>
 ## How
 
 ```
-$ yarn add @_nu/css-input
+$ yarn add @_nu/css-<%= componentName %>
 ```
 
 ## Tree

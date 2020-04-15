@@ -1,4 +1,6 @@
-# @_nu/cli
+# @\_nu/cli
+
+![preview](./src/preview.png)
 
 🛠️ Standard Tooling for nu-system component development
 
@@ -11,5 +13,5 @@ $ npm install @_nu/cli -g
 ## start
 
 ```bash
-nu-cli
+$ nu-cli
 ```

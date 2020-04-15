@@ -1,4 +1,4 @@
-# @\_nu/css-input
+# @\_nu/css-<%= componentName %>
 
 [![npm package][npm-badge]][npm-url]
 [![npm downloads][npm-downloads]][npm-url]
@@ -13,7 +13,7 @@
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/@_nu/css-<%= componentName %>/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/@_nu/css-<%= componentName %>
 
-English | [简体中文](https://nu-system.github.io/zh/css/<%= componentName %>/)
+[English](https://nu-system.github.io/css/<%= componentName %>/) | 简体中文
 
 ## 安装
 

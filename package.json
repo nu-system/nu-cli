@@ -12,7 +12,7 @@
   "files": [
     "bin",
     "src",
-    "template/*"
+    "template"
   ],
   "keywords": [
     "!ui",
@@ -31,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,md,less,css}": [
+    "*.{js,jsx,tsx,ts,less,css,md,json}": [
       "prettier --write"
     ]
   },
