@@ -2,9 +2,14 @@
   "name": "@_nu/css-<%= componentName %>",
   "version": "0.0.1",
   "description": "CSS <%= componentName %>",
-  "repository": "git@github.com:nu-system/css-<%= componentName %>.git",
-  "bugs": "https://github.com/nu-system/css-<%= componentName %>/issues",
   "homepage": "https://github.com/nu-system/css-<%= componentName %>",
+  "bugs": {
+    "url": "https://github.com/nu-system/css-<%= componentName %>/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nu-system/css-<%= componentName %>.git"
+  },
   "author": "<%= author %>",
   "license": "MIT",
   "browserslist": [

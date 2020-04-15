@@ -6,9 +6,14 @@
   "module": "es/index.js",
   "author": "<%= author %>",
   "license": "MIT",
-  "repository": "git@github.com:nu-system/react-<%= componentName %>.git",
-  "bugs": "https://github.com/nu-system/react-<%= componentName %>/issues",
-  "homepage": "https://nu-system.github.io/react/<%= componentName %>/",
+  "homepage": "https://github.com/nu-system/react-<%= componentName %>",
+  "bugs": {
+    "url": "https://github.com/nu-system/react-<%= componentName %>/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nu-system/react-<%= componentName %>.git"
+  },
   "files": <%- pkgFiles %>,
   "scripts": {
     "build": "nwb build-react-component",

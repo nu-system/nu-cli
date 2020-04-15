@@ -1,9 +1,16 @@
 {
   "name": "@_nu/cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "🛠️ Standard Tooling for nu-system component development",
   "main": "index.js",
-  "repository": "git@github.com:nu-system/nu-cli.git",
+  "homepage": "https://github.com/nu-system/nu-cli",
+  "bugs": {
+    "url": "https://github.com/nu-system/nu-cli/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nu-system/nu-cli.git"
+  },
   "author": "ziven27",
   "license": "MIT",
   "bin": {
