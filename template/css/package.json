@@ -29,18 +29,21 @@
     "start": "gulp",
     "build": "gulp build",
     "commit": "git add . && git cz",
+    "pub": "npm publish --access public",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'"
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'",
+    "prepublishOnly": "npm run build && npm run log && npm run cz && git push"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run log && git add . && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,json,md,less,css}": [
-      "prettier --write"
+      "prettier --write",
+      "git add ."
     ]
   },
   "devDependencies": {

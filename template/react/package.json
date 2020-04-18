@@ -18,19 +18,31 @@
   "scripts": {
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --server",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact"
+    "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'",
+    "prepublishOnly": "npm run build && npm run log && npm run cz && git push"
   },
   "dependencies": {
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": "16.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,md,less,css}": [
+      "prettier --write",
+      "git add ."
+    ]
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
@@ -44,8 +56,12 @@
     "cz-conventional-changelog": "3.0.2",
     "nwb": "0.23.x",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^1.19.1"
   },
+
   "keywords": [
     "react-component",
     "ui",

@@ -1,6 +1,6 @@
 {
   "name": "@_nu/cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "🛠️ Standard Tooling for nu-system component development",
   "main": "index.js",
   "homepage": "https://github.com/nu-system/nu-cli",
@@ -28,18 +28,21 @@
   ],
   "scripts": {
     "cz": "git add . && git cz",
+    "pub": "npm publish --access public",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'"
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'",
+    "prepublishOnly": "npm run log && npm run cz && git push"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run log && git add . && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,css,md,json}": [
-      "prettier --write"
+      "prettier --write",
+      "git add ."
     ]
   },
   "devDependencies": {
