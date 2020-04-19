@@ -1,3 +1,4 @@
+<% var componentNameC=componentName.charAt(0).toUpperCase() + componentName.slice(1);  %>
 # @\_nu/react-<%= componentName %>
 
 [![npm package][npm-badge]][npm-url]
@@ -13,27 +14,58 @@
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/@_nu/react-<%= componentName %>/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/@_nu/react-<%= componentName %>
 
-English | [简体中文](https://nu-system.github.io/zh/react/<%= componentName %>/)
+[English]((../README.md)) | 简体中文
 
-## How
-
-```
-$ yarn add @_nu/react-<%= componentName %>
-```
-
-## Tree
+## 安装
 
 ```
-@_nu/react-<%= componentName %>
+yarn add @_nu/react-<%= componentName %> @_nu/css-<%= componentName %>
 ```
 
-## API
+### 二次封装
 
-| Selector            |           Function |
-| :------------------ | -----------------: |
-| .nu_hello           |     style of hello |
+```JSX
+/* @components/<%= componentNameC %>/index.js */
+import <%= componentNameC %> from "@_nu/react-<%= componentName %>";
+// core style
+import "@_nu/css-<%= componentName %>";
+// skin of default
+import "@_nu/css-<%= componentName %>/css/skins/default.css";
+// custome style
+// import './style.css';
 
+// base className of <%= componentNameC %>
+<%= componentNameC %>.defaultProps.classNameBase = "";
 
-## More
+export default <%= componentNameC %>;
+```
+
+### 使用
+
+```JSX
+import <%= componentNameC %> from "./components/<%= componentNameC %>";
+
+const Page=()=>{
+    return (
+     <div>
+        <<%= componentNameC %>>Hello world!</<%= componentNameC %>>
+     </div>
+    );
+};
+
+export default Page;
+```
+
+## 接口
+
+| Prop             |               type               | Default  |         Function          |
+| :--------------- | :------------------------------: | :------: | :-----------------------: |
+| children         |       string &#124; Array        | '&nbsp;' |         children          |
+| className        |       string &#124; Array        | '&nbsp;' |         className         |
+| classNameDefault |       string &#124; Array        | '&nbsp;' |     default className     |
+
+## 更多
 
 - [nu-system](https://nu-system.github.io/)
+- [@\_nu/css-<%= componentName %>](https://nu-system.github.io/css/<%= componentName %>/)
+- [@\_nu/react-<%= componentName %>](https://nu-system.github.io/react/<%= componentName %>/)
