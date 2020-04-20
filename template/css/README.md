@@ -1,9 +1,8 @@
 # @\_nu/css-<%= componentName %>
 
-[![npm package][npm-badge]][npm-url]
-[![npm downloads][npm-downloads]][npm-url]
-[![jsdelivr][jsdelivr-badge]][jsdelivr-url]
-[![github][git-badge]][git-url]
+| npm package| npm downloads| jsdelivr |  github |
+| --------------- | ------------------------------ | ------ | ----------------------- |
+| [![npm package][npm-badge]][npm-url] | [![npm downloads][npm-downloads]][npm-url] | [![jsdelivr][jsdelivr-badge]][jsdelivr-url] | [![github][git-badge]][git-url] |
 
 [npm-badge]: https://img.shields.io/npm/v/@_nu/css-<%= componentName %>.svg
 [npm-url]: https://www.npmjs.org/package/@_nu/css-<%= componentName %>
