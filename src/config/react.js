@@ -7,9 +7,10 @@ module.exports = {
     'lang',
     'es',
     'lib',
+    'demo',
   ],
   // 需要使用 ejs 模版的文件
-  file_tpl: ['README.md', 'lang', 'package.json'],
+  file_tpl: ['demo', 'README.md', 'lang', 'package.json'],
   // 把 package.json 里面的 file 独立出来
   pkg_files: ['es', 'lib', 'umd', 'lang'],
 };

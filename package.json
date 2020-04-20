@@ -28,18 +28,21 @@
   ],
   "scripts": {
     "cz": "git add . && git cz",
+    "pub": "npm publish --access public",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'"
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,css,md,json}'",
+    "prepare": "npm run log"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run log && git add . && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts,less,css,md,json}": [
-      "prettier --write"
+      "prettier --write",
+      "git add ."
     ]
   },
   "devDependencies": {
@@ -54,8 +57,7 @@
     "lint-staged": "^10.1.3",
     "mem-fs": "^1.1.3",
     "mem-fs-editor": "^6.0.0",
-    "prettier": "^1.19.1",
-    "ypkgfiles": "^1.6.0"
+    "prettier": "^1.19.1"
   },
   "config": {
     "commitizen": {

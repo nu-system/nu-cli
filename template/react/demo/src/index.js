@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+<% var componentNameC=componentName.charAt(0).toUpperCase() + componentName.slice(1);  %>
+import React from 'react';
 import { render } from 'react-dom';
-import Hello from '../Component';
+import <%= componentNameC %> from '../components/component';
 
-class Demo extends Component {
-  render() {
-    return (
-      <Hello className="nu_hello">
-        <h1>NU-system</h1>
-        <p>No UI can be any UI! <a href="https://nu-system.github.io/" title="More"> More 👉</a></p>
-      </Hello>
-    );
-  }
+function Demo(){
+  return (
+    <<%= componentNameC %>>
+      hello world
+    </<%= componentNameC %>>
+  );
 }
 
 render(<Demo />, document.querySelector('#demo'));

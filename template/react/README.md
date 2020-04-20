@@ -1,3 +1,4 @@
+<% var componentNameC=componentName.charAt(0).toUpperCase() + componentName.slice(1);  %>
 # @\_nu/react-<%= componentName %>
 
 | npm package| npm downloads| jsdelivr |  github |
@@ -12,27 +13,61 @@
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/@_nu/react-<%= componentName %>/badge
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/@_nu/react-<%= componentName %>
 
-English | [简体中文](https://nu-system.github.io/zh/react/<%= componentName %>/)
+English | [简体中文](./lang/zh.md)
 
-## How
-
-```
-$ yarn add @_nu/react-<%= componentName %>
-```
-
-## Tree
+## Install
 
 ```
-@_nu/react-<%= componentName %>
+yarn add @_nu/react-<%= componentName %> @_nu/css-<%= componentName %>
+```
+
+- [@\_nu/react-<%= componentName %>](https://nu-system.github.io/react/<%= componentName %>/): Login only
+- [@\_nu/css-<%= componentName %>](https://nu-system.github.io/css/<%= componentName %>/): UI Just
+
+### Custom
+
+```JSX
+/* @components/<%= componentNameC %>/index.js */
+import <%= componentNameC %> from "@_nu/react-<%= componentName %>";
+// core style
+import "@_nu/css-<%= componentName %>";
+// skin of default
+import "@_nu/css-<%= componentName %>/css/skins/default.css";
+// custome style
+// import './style.css';
+
+// base className of <%= componentNameC %>
+<%= componentNameC %>.defaultProps.classNameBase = "";
+
+export default <%= componentNameC %>;
+```
+
+### Use
+
+```JSX
+import <%= componentNameC %> from "./components/<%= componentNameC %>";
+
+const Page=()=>{
+    return (
+     <div>
+        <<%= componentNameC %>>Hello world!</<%= componentNameC %>>
+     </div>
+    );
+};
+
+export default Page;
 ```
 
 ## API
 
-| Selector            |           Function |
-| :------------------ | -----------------: |
-| .nu_hello           |     style of hello |
-
+| Prop             |               type               | Default  |         Function          |
+| :--------------- | :------------------------------: | :------: | :-----------------------: |
+| children         |       string &#124; Array        | '&nbsp;' |         children          |
+| className        |       string &#124; Array        | '&nbsp;' |         className         |
+| classNameDefault |       string &#124; Array        | '&nbsp;' |     default className     |
 
 ## More
 
 - [nu-system](https://nu-system.github.io/)
+- [@\_nu/css-<%= componentName %>](https://nu-system.github.io/css/<%= componentName %>/)
+- [@\_nu/react-<%= componentName %>](https://nu-system.github.io/react/<%= componentName %>/)
