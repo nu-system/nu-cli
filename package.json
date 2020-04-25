@@ -1,6 +1,6 @@
 {
   "name": "@_nu/cli",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "🛠️ Standard Tooling for nu-system component development",
   "main": "index.js",
   "homepage": "https://github.com/nu-system/nu-cli",
@@ -36,7 +36,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -46,6 +47,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "chalk": "^4.0.0",
     "commander": "^5.0.0",
     "commitizen": "^4.0.3",
