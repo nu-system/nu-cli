@@ -1,5 +1,9 @@
 ## [1.1.4](https://github.com/nu-system/nu-cli/compare/v1.1.2...v1.1.4) (2020-05-17)
 
+### Bug Fixes
+
+- add prepublish ([3722ae7](https://github.com/nu-system/nu-cli/commit/3722ae78eb0e95ec242dbaadb04811f9fcb9d273))
+
 ## [1.1.2](https://github.com/nu-system/nu-cli/compare/93e54a5d736cc87fef229188c1cd303c67ca56e4...v1.1.2) (2020-05-16)
 
 ### Bug Fixes
