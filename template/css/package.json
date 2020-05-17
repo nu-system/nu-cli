@@ -28,7 +28,7 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "commit": "git add . && git cz",
+    "cz": "git add . && git cz",
     "pub": "npm publish --access public",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",

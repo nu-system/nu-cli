@@ -6,13 +6,6 @@ const minifyCSS = require("gulp-csso");
 
 const lessFiles = "src/**/*.less";
 
-function cssDev() {
-  return src(lessFiles)
-    .pipe(less())
-    .pipe(dest("demo/"))
-    .pipe(connect.reload());
-}
-
 function cssBuild() {
   return src(lessFiles)
     .pipe(less())
@@ -26,12 +19,12 @@ function cssBuild() {
 }
 
 function dev() {
-  watch([lessFiles], cssDev);
+  watch([lessFiles], cssBuild);
   connect.server({
-    root: "./demo/",
+    root: "./",
     livereload: true,
     port: 2727
   });
 }
 exports.build = parallel(cssBuild);
-exports.default = parallel(cssDev, dev);
+exports.default = parallel(cssBuild, dev);

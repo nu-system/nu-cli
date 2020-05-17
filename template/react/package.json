@@ -27,7 +27,8 @@
     "commitizenInit": "commitizen init cz-conventional-changelog --yarn --dev --exact",
     "prettier": "prettier --write '*.{js,jsx,tsx,ts,less,css,md,json}'",
     "lint": "eslint '*.{js,jsx,mjs,ts,tsx}' --fix",
-    "prepare": "npm run build && npm run log"
+    "cz": "git add . && git cz",
+    "prepublishOnly": "npm run build && npm run log && npm run cz && git push"
   },
   "dependencies": {
     "prop-types": "^15.7.2"
